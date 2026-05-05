@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MAIZ Incorporadora — 30 anos construindo lugares que ficam na memória. Conheça o Edifício Piedmont, alto padrão em Uberlândia, MG." />
+  <title>MAIZ Incorporadora — Uberlândia, MG</title>
+  <style>
+    /* =============================================
+       MAIZ INCORPORADORA — HOME PAGE
+       Para uso no Squarespace (Plano Business):
+       - CSS global: Design → CSS Personalizado
+       - Seções: blocos de código HTML na página
+    ============================================= */
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body, .maiz-root {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      color: #1a1a18;
+      background: #fafaf8;
+      width: 100%;
+    }
+
+    /* ---- NAVEGAÇÃO ---- */
+    .maiz-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 2.5rem;
+      background: #fafaf8;
+      border-bottom: 0.5px solid #d8d5cf;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .maiz-nav__logo img { height: 36px; width: auto; }
+
+    .maiz-nav__links {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+    }
+
+    .maiz-nav__links a {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #5a5a52;
+      text-decoration: none;
+      font-weight: 400;
+    }
+
+    .maiz-nav__links a:hover { color: #1a1a18; }
+
+    .maiz-nav__cta {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 9px 22px;
+      border: 0.5px solid #1a1a18;
+      background: transparent;
+      color: #1a1a18;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .maiz-nav__cta:hover { background: #1a1a18; color: #fafaf8; }
+
+    /* ---- HERO ---- */
+    .maiz-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 580px;
+    }
+
+    .maiz-hero__left {
+      background: #1e1e1b;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 3rem 4rem 2.5rem;
+      color: #fafaf8;
+    }
+
+    .maiz-hero__eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #8a8880;
+      margin-bottom: 1.75rem;
+      font-weight: 300;
+    }
+
+    .maiz-hero__title {
+      font-size: 46px;
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      color: #f0ede6;
+      letter-spacing: -0.01em;
+    }
+
+    .maiz-hero__title em {
+      font-style: italic;
+      color: #c0392b;
+    }
+
+    .maiz-hero__subtitle {
+      font-size: 13px;
+      line-height: 1.85;
+      color: #9a9890;
+      max-width: 370px;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+
+    .maiz-hero__actions { display: flex; gap: 1.25rem; align-items: center; }
+
+    .maiz-hero__right {
+      background: #2a2927;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      min-height: 480px;
+    }
+
+    .maiz-hero__img-wrap {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem;
+    }
+
+    .maiz-hero__img-wrap img {
+      max-width: 80%;
+      opacity: 0.85;
+      filter: invert(1) brightness(0.9);
+    }
+
+    .maiz-hero__badge {
+      position: absolute;
+      bottom: 2rem;
+      right: 2rem;
+      background: #c0392b;
+      padding: 1rem 1.25rem;
+      text-align: center;
+    }
+
+    .maiz-hero__badge-label {
+      font-size: 9px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      font-weight: 300;
+    }
+
+    .maiz-hero__badge-value {
+      font-size: 13px;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.06em;
+      margin-top: 3px;
+    }
+
+    /* ---- BOTÕES ---- */
+    .btn-primary {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 12px 28px;
+      background: #c0392b;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover { background: #a93226; }
+
+    .btn-ghost {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #8a8880;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-weight: 400;
+    }
+
+    .btn-ghost::after { content: "→"; font-size: 13px; }
+
+    .btn-white {
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 13px 36px;
+      background: #fff;
+      border: none;
+      color: #c0392b;
+      cursor: pointer;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-block;
+      transition: opacity 0.2s;
+    }
+
+    .btn-white:hover { opacity: 0.9; }
+
+    /* ---- BARRA DE STATS ---- */
+    .maiz-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      background: #1a1a18;
+    }
+
+    .maiz-stats__item {
+      padding: 1.75rem 2rem;
+      border-right: 0.5px solid #2e2e2a;
+      text-align: center;
+    }
+
+    .maiz-stats__item:last-child { border-right: none; }
+
+    .maiz-stats__number {
+      font-size: 36px;
+      font-weight: 300;
+      color: #c0392b;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .maiz-stats__label {
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #6a6860;
+      margin-top: 0.5rem;
+      font-weight: 300;
+    }
+
+    /* ---- SEÇÕES GERAIS ---- */
+    .maiz-section { padding: 4rem 2.5rem; }
+
+    .maiz-section__eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #9e9c94;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 300;
+    }
+
+    .maiz-section__eyebrow::after {
+      content: "";
+      display: inline-block;
+      width: 28px;
+      height: 0.5px;
+      background: #c0392b;
+    }
+
+    .maiz-section__title {
+      font-size: 36px;
+      font-weight: 300;
+      line-height: 1.2;
+      color: #1a1a18;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .maiz-section__title em { font-style: italic; color: #c0392b; }
+
+    /* ---- PIEDMONT GRID ---- */
+    .maiz-piedmont__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border: 0.5px solid #d8d5cf;
+    }
+
+    .maiz-piedmont__left {
+      background: #f5f3ef;
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .maiz-piedmont__desc {
+      font-size: 13px;
+      line-height: 1.9;
+      color: #5a5a52;
+      max-width: 380px;
+      font-weight: 300;
+    }
+
+    .maiz-piedmont__right {
+      background: #2a2927;
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .maiz-spec__row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 0.5px solid #3a3937;
+      padding-bottom: 1rem;
+    }
+
+    .maiz-spec__row:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .maiz-spec__label {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #6a6860;
+      font-weight: 300;
+    }
+
+    .maiz-spec__value {
+      font-size: 14px;
+      color: #f0ede6;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+    }
+
+    /* ---- DIFERENCIAIS ---- */
+    .maiz-diferenciais__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: #d8d5cf;
+      border: 0.5px solid #d8d5cf;
+      margin-top: 2.5rem;
+    }
+
+    .maiz-diferencial__item {
+      background: #fafaf8;
+      padding: 2rem 1.75rem;
+    }
+
+    .maiz-diferencial__icon {
+      width: 32px;
+      height: 32px;
+      border: 0.5px solid #c0392b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .maiz-diferencial__icon svg {
+      width: 14px;
+      height: 14px;
+      stroke: #c0392b;
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .maiz-diferencial__title {
+      font-size: 12px;
+      font-weight: 500;
+      color: #1a1a18;
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.02em;
+    }
+
+    .maiz-diferencial__text {
+      font-size: 12px;
+      line-height: 1.75;
+      color: #7a7870;
+      font-weight: 300;
+    }
+
+    /* ---- SOBRE ---- */
+    .maiz-sobre {
+      background: #1e1e1b;
+      padding: 4rem 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .maiz-sobre__quote {
+      font-size: 26px;
+      font-weight: 300;
+      line-height: 1.5;
+      color: #f0ede6;
+      font-style: italic;
+      letter-spacing: -0.01em;
+      border-left: 2px solid #c0392b;
+      padding-left: 1.5rem;
+    }
+
+    .maiz-sobre__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #c0392b;
+      text-decoration: none;
+      margin-top: 1.75rem;
+      font-weight: 500;
+    }
+
+    .maiz-sobre__link::after { content: "→"; font-size: 13px; }
+
+    .maiz-sobre__text {
+      font-size: 13px;
+      line-height: 1.9;
+      color: #9a9890;
+      font-weight: 300;
+    }
+
+    /* ---- CTA ---- */
+    .maiz-cta {
+      background: #c0392b;
+      padding: 4rem 2.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .maiz-cta__title {
+      font-size: 38px;
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    .maiz-cta__sub {
+      font-size: 13px;
+      color: rgba(255,255,255,0.75);
+      max-width: 420px;
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    /* ---- RODAPÉ ---- */
+    .maiz-footer {
+      background: #111110;
+      padding: 3rem 2.5rem 2rem;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .maiz-footer__logo img {
+      height: 28px;
+      width: auto;
+      opacity: 0.6;
+      margin-bottom: 1rem;
+    }
+
+    .maiz-footer__tagline {
+      font-size: 12px;
+      color: #5a5a52;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .maiz-footer__heading {
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #5a5a52;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    .maiz-footer__item {
+      font-size: 12px;
+      color: #7a7870;
+      margin-bottom: 0.5rem;
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    .maiz-footer__bottom {
+      grid-column: 1 / -1;
+      border-top: 0.5px solid #2a2927;
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+    }
+
+    .maiz-footer__copy {
+      font-size: 11px;
+      color: #3a3937;
+      font-weight: 300;
+    }
+
+    /* ---- RESPONSIVO ---- */
+    @media (max-width: 768px) {
+      .maiz-hero,
+      .maiz-piedmont__grid,
+      .maiz-sobre {
+        grid-template-columns: 1fr;
+      }
+
+      .maiz-hero__right { min-height: 300px; }
+
+      .maiz-hero__title { font-size: 32px; }
+
+      .maiz-diferenciais__grid { grid-template-columns: 1fr 1fr; }
+
+      .maiz-footer { grid-template-columns: 1fr; gap: 2rem; }
+
+      .maiz-stats { grid-template-columns: 1fr; }
+
+      .maiz-stats__item { border-right: none; border-bottom: 0.5px solid #2e2e2a; }
+
+      .maiz-nav__links { display: none; }
+
+      .maiz-section { padding: 3rem 1.5rem; }
+
+      .maiz-sobre { gap: 2.5rem; padding: 3rem 1.5rem; }
+    }
+
+    @media (max-width: 480px) {
+      .maiz-diferenciais__grid { grid-template-columns: 1fr; }
+      .maiz-cta__title { font-size: 28px; }
+      .maiz-hero__left { padding: 3rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- =============================================
+     NAVEGAÇÃO
+============================================= -->
+<nav class="maiz-nav">
+  <div class="maiz-nav__logo">
+    <img
+      src="https://images.squarespace-cdn.com/content/v1/6686d7695b24ba34a81004ce/027cdcf9-e250-4acb-9a94-37bd2d21b4c0/ID+MAIZ+TRADICIONALAtivo+13.png?format=1500w"
+      alt="MAIZ Incorporadora"
+    />
+  </div>
+  <ul class="maiz-nav__links">
+    <li><a href="/about">Quem somos</a></li>
+    <li><a href="/projetos">Edifício Piedmont</a></li>
+    <li><a href="/tabela-de-vendas">Tabela de vendas</a></li>
+  </ul>
+  <a
+    class="maiz-nav__cta"
+    href="https://wa.me/5534998785550?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20visita%20ao%20Edif%C3%ADcio%20Piedmont!"
+    target="_blank"
+    rel="noopener"
+  >
+    Agendar visita
+  </a>
+</nav>
+
+<!-- =============================================
+     HERO
+============================================= -->
+<section class="maiz-hero">
+  <div class="maiz-hero__left">
+    <p class="maiz-hero__eyebrow">Uberlândia · MG · desde 1995</p>
+    <h1 class="maiz-hero__title">
+      Construímos lugares<br>que ficam na <em>memória</em>
+    </h1>
+    <p class="maiz-hero__subtitle">
+      Trinta anos de história familiar transformados em endereços que inspiram.
+      Cada detalhe concebido com cuidado, cada espaço pensado para quem vai viver nele.
+    </p>
+    <div class="maiz-hero__actions">
+      <a class="btn-primary" href="/projetos">Conhecer o Piedmont</a>
+      <a class="btn-ghost" href="/tabela-de-vendas">Ver tabela de vendas</a>
+    </div>
+  </div>
+  <div class="maiz-hero__right">
+    <div class="maiz-hero__img-wrap">
+      <img
+        src="https://images.squarespace-cdn.com/content/v1/6686d7695b24ba34a81004ce/e6a75486-1999-46aa-ba81-c464ed2dfb4b/ID+PIEDMONT+SEM+LOGO+MAIZAtivo+14.png"
+        alt="Edifício Piedmont — MAIZ Incorporadora"
+      />
+    </div>
+    <div class="maiz-hero__badge">
+      <p class="maiz-hero__badge-label">Em comercialização</p>
+      <p class="maiz-hero__badge-value">Edifício Piedmont</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     BARRA DE NÚMEROS
+============================================= -->
+<div class="maiz-stats">
+  <div class="maiz-stats__item">
+    <div class="maiz-stats__number">30+</div>
+    <div class="maiz-stats__label">Anos de atuação</div>
+  </div>
+  <div class="maiz-stats__item">
+    <div class="maiz-stats__number">100%</div>
+    <div class="maiz-stats__label">Compromisso com entrega</div>
+  </div>
+  <div class="maiz-stats__item">
+    <div class="maiz-stats__number">UDI</div>
+    <div class="maiz-stats__label">Raízes em Uberlândia</div>
+  </div>
+</div>
+
+<!-- =============================================
+     EDIFÍCIO PIEDMONT
+============================================= -->
+<section class="maiz-section">
+  <p class="maiz-section__eyebrow">Edifício Piedmont</p>
+  <h2 class="maiz-section__title">
+    Um endereço que define<br>um novo <em>padrão</em>
+  </h2>
+  <div class="maiz-piedmont__grid">
+    <div class="maiz-piedmont__left">
+      <p class="maiz-piedmont__desc">
+        Localizado na Praça Alcides Borges de Oliveira, o Piedmont reúne sofisticação
+        arquitetônica e qualidade construtiva em um endereço privilegiado de Uberlândia.
+        Um projeto pensado para quem exige o melhor.
+      </p>
+      <a class="btn-primary" href="/projetos" style="margin-top: 2rem; align-self: flex-start;">
+        Ver projeto completo →
+      </a>
+    </div>
+    <div class="maiz-piedmont__right">
+      <div class="maiz-spec__row">
+        <span class="maiz-spec__label">Localização</span>
+        <span class="maiz-spec__value">Uberlândia · MG</span>
+      </div>
+      <div class="maiz-spec__row">
+        <span class="maiz-spec__label">Padrão</span>
+        <span class="maiz-spec__value">Alto padrão</span>
+      </div>
+      <div class="maiz-spec__row">
+        <span class="maiz-spec__label">Status</span>
+        <span class="maiz-spec__value">Em comercialização</span>
+      </div>
+      <div class="maiz-spec__row">
+        <span class="maiz-spec__label">Contato</span>
+        <span class="maiz-spec__value">(34) 99878-5550</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     DIFERENCIAIS
+============================================= -->
+<section class="maiz-section" style="padding-top: 0;">
+  <p class="maiz-section__eyebrow">Por que a MAIZ</p>
+  <h2 class="maiz-section__title">
+    Diferenciais que você<br>sente no <em>dia a dia</em>
+  </h2>
+  <div class="maiz-diferenciais__grid">
+
+    <div class="maiz-diferencial__item">
+      <div class="maiz-diferencial__icon">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <p class="maiz-diferencial__title">Família por trás de cada obra</p>
+      <p class="maiz-diferencial__text">Desde 1995, somos uma empresa familiar com valores sólidos. Cada projeto carrega o nome e o cuidado de quem o assina.</p>
+    </div>
+
+    <div class="maiz-diferencial__item">
+      <div class="maiz-diferencial__icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <p class="maiz-diferencial__title">Três décadas de história</p>
+      <p class="maiz-diferencial__text">30 anos de canteiros de obra, aprendizado e aprimoramento constante. Experiência que se traduz em qualidade visível.</p>
+    </div>
+
+    <div class="maiz-diferencial__item">
+      <div class="maiz-diferencial__icon">
+        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </div>
+      <p class="maiz-diferencial__title">Paixão pelo detalhe</p>
+      <p class="maiz-diferencial__text">Construímos lugares que se tornam palco de memórias. O capricho não é um diferencial — é nossa forma de trabalhar.</p>
+    </div>
+
+    <div class="maiz-diferencial__item">
+      <div class="maiz-diferencial__icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <p class="maiz-diferencial__title">Equipe que permanece</p>
+      <p class="maiz-diferencial__text">Profissionais fiéis ao longo da trajetória. A continuidade garante padrão de execução consistente em cada obra.</p>
+    </div>
+
+    <div class="maiz-diferencial__item">
+      <div class="maiz-diferencial__icon">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <p class="maiz-diferencial__title">Qualidade que se vê</p>
+      <p class="maiz-diferencial__text">Materiais selecionados, acabamento criterioso e atenção a cada etapa. Um imóvel que envelhece bem.</p>
+    </div>
+
+    <div class="maiz-diferencial__item">
+      <div class="maiz-diferencial__icon">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <p class="maiz-diferencial__title">Raízes em Uberlândia</p>
+      <p class="maiz-diferencial__text">Nascemos em Coromandel e fizemos morada em Uberlândia. Conhecemos a cidade, seus bairros e o que seus moradores valorizam.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- =============================================
+     SOBRE
+============================================= -->
+<section class="maiz-sobre">
+  <div>
+    <blockquote class="maiz-sobre__quote">
+      "Construímos lugares que serão palco de memórias. Nossa paixão é pelo capricho
+      e empenho de todos que dividem seu tempo conosco."
+    </blockquote>
+    <a class="maiz-sobre__link" href="/about">Conheça nossa história</a>
+  </div>
+  <div>
+    <p class="maiz-sobre__text">
+      Somos uma empresa familiar que trabalha no ramo da construção civil desde 1995.
+      O que se iniciou como uma empreitada em casal se transformou em negócio de família,
+      reunindo filhas, sobrinhos, primos e amigos que se fizeram fiéis durante a caminhada.
+      <br><br>
+      Acreditamos no cuidado com as pessoas — as que trabalham com a gente, e as que
+      vivenciam esse trabalho no seu momento de descanso, encontro e acolhimento em casa.
+    </p>
+    <a class="maiz-sobre__link" href="/about">Quem somos</a>
+  </div>
+</section>
+
+<!-- =============================================
+     CTA FINAL
+============================================= -->
+<section class="maiz-cta">
+  <h2 class="maiz-cta__title">
+    Pronto para conhecer<br>o Edifício Piedmont?
+  </h2>
+  <p class="maiz-cta__sub">
+    Agende uma visita e descubra pessoalmente o padrão construtivo que faz
+    da MAIZ uma referência em Uberlândia há 30 anos.
+  </p>
+  <a
+    class="btn-white"
+    href="https://wa.me/5534998785550?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20visita%20ao%20Edif%C3%ADcio%20Piedmont!"
+    target="_blank"
+    rel="noopener"
+  >
+    Agendar pelo WhatsApp
+  </a>
+</section>
+
+<!-- =============================================
+     RODAPÉ
+============================================= -->
+<footer class="maiz-footer">
+  <div>
+    <div class="maiz-footer__logo">
+      <img
+        src="https://images.squarespace-cdn.com/content/v1/6686d7695b24ba34a81004ce/027cdcf9-e250-4acb-9a94-37bd2d21b4c0/ID+MAIZ+TRADICIONALAtivo+13.png?format=1500w"
+        alt="MAIZ Incorporadora"
+      />
+    </div>
+    <p class="maiz-footer__tagline">
+      Incorporadora e construtora familiar<br>
+      com 30 anos de história em Uberlândia — MG.
+    </p>
+  </div>
+  <div>
+    <p class="maiz-footer__heading">Navegação</p>
+    <p class="maiz-footer__item"><a href="/" style="color:inherit;text-decoration:none;">Página inicial</a></p>
+    <p class="maiz-footer__item"><a href="/about" style="color:inherit;text-decoration:none;">Quem somos</a></p>
+    <p class="maiz-footer__item"><a href="/projetos" style="color:inherit;text-decoration:none;">Edifício Piedmont</a></p>
+    <p class="maiz-footer__item"><a href="/tabela-de-vendas" style="color:inherit;text-decoration:none;">Tabela de vendas</a></p>
+  </div>
+  <div>
+    <p class="maiz-footer__heading">Contato</p>
+    <p class="maiz-footer__item">Praça Alcides Borges de Oliveira, 20<br>Uberlândia — MG</p>
+    <p class="maiz-footer__item">(34) 3213-5550<br>(34) 99878-5550</p>
+    <p class="maiz-footer__item">Seg–Sex · 07h às 17h<br>Sáb · 07h às 11h</p>
+  </div>
+  <div class="maiz-footer__bottom">
+    <p class="maiz-footer__copy">© 2025 MAIZ Incorporadora. Todos os direitos reservados.</p>
+    <p class="maiz-footer__copy">Uberlândia · MG</p>
+  </div>
+</footer>
+
+</body>
+</html>
